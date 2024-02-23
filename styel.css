@@ -1,7 +1,20 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: auto;
+    border: 1px solid orange;
+}
 #display {
     border: 1px solid grey;
-    display: flex;
-    justify-self: center;
-    width: 250px;
+    width: 325px;
     height: 50px;
+}
+
+button {
+    width: 75px;
+    height: 25px;
+}
+#buttons {
+    width: 325px;
 }

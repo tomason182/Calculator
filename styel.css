@@ -9,14 +9,15 @@ body{
     flex-wrap: wrap;
     width: 325px;
     height: auto;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 #display {
     border: 1px solid grey;
-    width: 310px;
+    /*width: 310px;*/
     height: 65px;
     border-radius: 5px;
+    flex: 1;
 
 }
 
@@ -24,11 +25,11 @@ body{
     width: 325px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #button {
     width: 75px;
     height: 45px;
-    margin: 2px 2px 2px 2px;   
+    margin-top: 5px;
 }

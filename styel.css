@@ -1,0 +1,5 @@
+#display {
+    border: 1px solid grey;
+    display: flex;
+    justify-self: center;
+}

@@ -1,5 +1,4 @@
 let listOfWanders = [];
-let result = 0;
 
 const display = document.querySelector('#display');
 
@@ -16,6 +15,9 @@ pressEspecial.forEach((button) => {
 
 let pressEquals = document.querySelector('.equals');
 pressEquals.addEventListener('click', () => makeCalculus());
+
+let pressReset = document.querySelector('.reset');
+pressReset.addEventListener('click', () => reset());
 
 // functions section
 
@@ -61,6 +63,7 @@ function makeCalculus() {
     let numTwo;
     let operator;
     let indexOperator;
+    let result;
     const operators = ["+", "-", "x", "÷"];
 
     for (let i=0; i < operators.length; i++) {
@@ -93,15 +96,21 @@ function makeCalculus() {
     listOfWanders = [];
     listOfWanders.push(result);
 
-    const remuveOperation = document.querySelectorAll('.content');
-    remuveOperation.forEach((item) => item.remove());
+    const removeOperation = document.querySelectorAll('.content');
+    removeOperation.forEach((item) => item.remove());
 
     const content = document.createElement('div');
     content.classList.toggle('content');
     content.textContent = result;
     content.setAttribute('style', 'font-size: 25px;');
 
-    display.appendChild(content);
+    display.appendChild(content);   
+}
 
-    
+function reset () {
+
+    listOfWanders = [];
+    const removeOperation = document.querySelectorAll('.content');
+    removeOperation.forEach((item) => item.remove());
+
 }

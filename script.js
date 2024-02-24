@@ -1,3 +1,10 @@
+/*  bugs needed to be fix: 
+- limit amount of numbers enter or modified display.
+- more than one operation simbo.
+- add an undo button.  
+ */
+
+
 let calculatorList = [];
 
 const display = document.querySelector('#display');
@@ -23,6 +30,9 @@ pressEquals.addEventListener('click', () => makeCalculus());
 
 let pressReset = document.querySelector('.reset');
 pressReset.addEventListener('click', () => reset());
+
+let pressUndo = document.querySelector('.undo');
+pressUndo.addEventListener('click', () => undoLastEntry());
 
 // functions section
 
@@ -136,4 +146,13 @@ function contentInitial(value) {
     element.setAttribute('style', 'font-size: 25px; padding-right: 5px');
 
     return element
+}
+
+function undoLastEntry () {
+    
+    const lastElement = document.querySelectorAll('.content');
+
+    if (lastElement.length > 0){
+        display.removeChild(lastElement[lastElement.length-1]);
+    }    
 }

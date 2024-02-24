@@ -17,7 +17,12 @@ body{
     /*width: 310px;*/
     height: 65px;
     border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:flex-end;
     flex: 1;
+    align-items: center;
 
 }
 

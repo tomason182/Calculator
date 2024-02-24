@@ -16,7 +16,7 @@ function calculator(a) {
     const content = document.createElement('div');
     content.classList.toggle('content');
     content.textContent = pressedButton;
-    content.setAttribute('style', 'font-size: 25px; text-align: right; padding-right: 8px; display: inline-block');
+    content.setAttribute('style', 'font-size: 25px; text-align: right; padding-right: 8px; display: ');
 
     display.appendChild(content);
 

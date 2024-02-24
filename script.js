@@ -154,5 +154,9 @@ function undoLastEntry () {
 
     if (lastElement.length > 0){
         display.removeChild(lastElement[lastElement.length-1]);
-    }    
+    }
+
+    calculatorList.pop();
+    
+    
 }

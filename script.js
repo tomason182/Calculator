@@ -1,6 +1,11 @@
-let listOfWanders = [];
+let calculatorList = [];
 
 const display = document.querySelector('#display');
+let initialValue = 0;
+
+let initialContent = contentInitial(initialValue);
+
+display.appendChild(initialContent);
 
 let pressNum = document.querySelectorAll('.number');
 
@@ -23,7 +28,13 @@ pressReset.addEventListener('click', () => reset());
 
 function displayNum(a) {
     let pressedButton = a.textContent;
-    listOfWanders.push(pressedButton);
+    calculatorList.push(pressedButton);
+
+    const removeInitial = document.querySelector('.initial');
+    if (removeInitial != null){
+        removeInitial.remove();
+    }
+    
     
     const content = document.createElement('div');
     content.classList.toggle('content');
@@ -39,13 +50,13 @@ function displayEspecial (b) {
 
     let pressedEspecial = b.textContent;    
 
-    if (listOfWanders.length === 0 || isNaN(parseFloat(listOfWanders[listOfWanders.length -1]))) {
+    if (calculatorList.length === 0 || isNaN(parseFloat(calculatorList[calculatorList.length -1]))) {
         
         return null;
         
     }else{
 
-        listOfWanders.push(pressedEspecial);
+        calculatorList.push(pressedEspecial);
 
         const content = document.createElement('div');
         content.classList.toggle('content');
@@ -68,14 +79,14 @@ function makeCalculus() {
 
     for (let i=0; i < operators.length; i++) {
 
-        indexOperator = listOfWanders.findIndex((j) => j === operators[i]);
+        indexOperator = calculatorList.findIndex((j) => j === operators[i]);
 
         if (indexOperator === -1 ) {
             continue;            
         }else{
             operator = operators[i];
-            numOne = parseFloat(listOfWanders.slice(0, indexOperator).join(""));
-            numTwo = parseFloat(listOfWanders.slice(indexOperator + 1).join(""));
+            numOne = parseFloat(calculatorList.slice(0, indexOperator).join(""));
+            numTwo = parseFloat(calculatorList.slice(indexOperator + 1).join(""));
             
             if (operator === '+'){
                 result = numOne + numTwo;
@@ -90,11 +101,11 @@ function makeCalculus() {
     }
 
     if (operator === undefined){
-        result = parseFloat(listOfWanders.join(""));
+        result = parseFloat(calculatorList.join(""));
     }
 
-    listOfWanders = [];
-    listOfWanders.push(result);
+    calculatorList = [];
+    calculatorList.push(result);
 
     const removeOperation = document.querySelectorAll('.content');
     removeOperation.forEach((item) => item.remove());
@@ -109,8 +120,20 @@ function makeCalculus() {
 
 function reset () {
 
-    listOfWanders = [];
-    const removeOperation = document.querySelectorAll('.content');
-    removeOperation.forEach((item) => item.remove());
+    calculatorList = [];
+    const cleanDisplay = document.querySelectorAll('.content');
+    cleanDisplay.forEach((item) => item.remove());
 
+    display.appendChild(initialContent);
+
+}
+
+function contentInitial(value) {
+
+    let element = document.createElement('div');
+    element.classList.toggle('initial');
+    element.textContent = value;
+    element.setAttribute('style', 'font-size: 25px; padding-right: 5px');
+
+    return element
 }

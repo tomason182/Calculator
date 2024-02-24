@@ -8,8 +8,10 @@ pressNum.forEach((button) => {
     button.addEventListener('click', () => displayNum(button));
 });
 
-let pressEspecial = 
-
+let pressEspecial = document.querySelectorAll('.special');
+pressEspecial.forEach((button) => {
+    button.addEventListener('click', () => displayEspecial(button));
+})
 
 function displayNum(a) {
     let pressedButton = a.textContent;
@@ -18,10 +20,33 @@ function displayNum(a) {
     const content = document.createElement('div');
     content.classList.toggle('content');
     content.textContent = pressedButton;
-    content.setAttribute('style', 'font-size: 25px; flex-shrink: ');
+    content.setAttribute('style', 'font-size: 25px;');
 
     display.appendChild(content);
 
-    console.log(listOfWanders)
+    console.log(listOfWanders);
+}
+
+function displayEspecial (b) {
+    let pressedEspecial = b.textContent;    
+
+    if (listOfWanders.length === 0 || isNaN(parseFloat(listOfWanders[listOfWanders.length -1]))) {
+        
+        return null;
+        
+    }else{
+
+        listOfWanders.push(pressedEspecial);
+        const content = document.createElement('div');
+        content.classList.toggle('content');
+        content.textContent = pressedEspecial;
+        content.setAttribute('style', 'font-size: 15px;');
+    
+        display.appendChild(content);
+    };
 
 }
+   
+
+
+console.log(listOfWanders.length)

@@ -18,9 +18,25 @@ pressNum.forEach((button) => {
 
 
 function calculator(a) {
-    let mi = a.textContent;
-    listOfWanders.push(mi);
-    return console.log(listOfWanders);
+    let pressedButton = a.textContent;
+    listOfWanders.push(pressedButton);
+    
+    firstItem = parseFloat(listOfWanders[0]);
+    if (isNaN(firstItem)) {
+        listOfWanders.shift();
+    }
+
+
+    console.log(listOfWanders);
+
+
+   /*  for (i = 0; listOfWanders.length -1; i++) {
+        
+    }
+
+
+
+    return console.log(listOfWanders); */
 
 
 }

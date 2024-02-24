@@ -10,7 +10,7 @@ display.appendChild(content);
 let pressNum = document.querySelectorAll('button');
 
 
-let operation = [];
+let listOfWanders = [];
 
 pressNum.forEach((button) => {
     button.addEventListener('click', () => calculator(button));
@@ -18,16 +18,9 @@ pressNum.forEach((button) => {
 
 
 function calculator(a) {
+    let mi = a.textContent;
+    listOfWanders.push(mi);
+    return console.log(listOfWanders);
 
-    if (parseFloat(operation[0]) || operation[0] === "Undefined"){
-
-        if (a.classList === "equal"){
-            //code for calculation
-        }else{
-            operation.push(a.textContent);
-        }
-    }    
-    
-    return console.log(operation)
 
 }

@@ -90,6 +90,9 @@ function makeCalculus() {
         result = parseFloat(listOfWanders.join(""));
     }
 
+    listOfWanders = [];
+    listOfWanders.push(result);
+
     const remuveOperation = document.querySelectorAll('.content');
     remuveOperation.forEach((item) => item.remove());
 

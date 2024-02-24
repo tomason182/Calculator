@@ -13,6 +13,10 @@ pressEspecial.forEach((button) => {
     button.addEventListener('click', () => displayEspecial(button));
 })
 
+let pressEquals = document.querySelector('.equals')
+
+// functions section
+
 function displayNum(a) {
     let pressedButton = a.textContent;
     listOfWanders.push(pressedButton);

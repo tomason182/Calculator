@@ -1,6 +1,6 @@
 /*  bugs needed to be fix: 
 - limit amount of numbers enter or modified display.
-- more than one operation simbo.
+- more than one operation symbol.
 - add an undo button.  
  */
 
